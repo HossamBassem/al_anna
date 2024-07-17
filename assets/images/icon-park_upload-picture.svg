@@ -1,0 +1,11 @@
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon-park:upload-picture">
+<g id="Group">
+<path id="Vector" d="M27.5 15C27.5 14.3096 26.9404 13.75 26.25 13.75C25.5596 13.75 25 14.3096 25 15H27.5ZM15 5C15.6904 5 16.25 4.44036 16.25 3.75C16.25 3.05964 15.6904 2.5 15 2.5V5ZM24.375 25H5.625V27.5H24.375V25ZM5 24.375V5.625H2.5V24.375H5ZM25 15V24.375H27.5V15H25ZM5.625 5H15V2.5H5.625V5ZM5.625 25C5.27983 25 5 24.7202 5 24.375H2.5C2.5 26.1009 3.89911 27.5 5.625 27.5V25ZM24.375 27.5C26.1009 27.5 27.5 26.1009 27.5 24.375H25C25 24.7202 24.7202 25 24.375 25V27.5ZM5 5.625C5 5.27983 5.27982 5 5.625 5V2.5C3.89911 2.5 2.5 3.89911 2.5 5.625H5Z" fill="#605757"/>
+<path id="Vector_2" d="M3.75 21.875L10.4332 15.7488C10.8993 15.3214 11.6112 15.3096 12.0913 15.7211L20 22.5" stroke="#605757" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M17.5 19.375L20.4834 16.3916C20.9232 15.9518 21.6196 15.9023 22.1173 16.2755L26.25 19.375" stroke="#605757" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M23.125 11.25V3.75" stroke="#605757" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" d="M20 6.875L23.125 3.75L26.25 6.875" stroke="#605757" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>
