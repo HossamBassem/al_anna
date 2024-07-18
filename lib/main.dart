@@ -1,6 +1,10 @@
 import 'package:al_anna/CircleAvatar.dart';
+import 'package:al_anna/Screens/CreateNewAnna.dart';
+import 'package:al_anna/Screens/JoinAnna.dart';
 import 'package:al_anna/Screens/OtpScreen.dart';
 import 'package:al_anna/Screens/PasswordReset.dart';
+import 'package:al_anna/Screens/RequestSentDialog.dart';
+import 'package:al_anna/Screens/SetNewPassword.dart';
 import 'package:al_anna/Screens/login.dart';
 import 'package:al_anna/textField/passwordTextField.dart';
 import 'package:al_anna/textField/phoneFormat.dart';
@@ -33,9 +37,9 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.brown,
+        primarySwatch: Colors.blue,
       ),
-      home: OtpScreen(),
+      home: JoinAnna(),
       builder: (context, child) {
         return Directionality(textDirection: TextDirection.rtl, child: child!);
       },

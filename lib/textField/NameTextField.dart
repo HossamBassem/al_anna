@@ -26,19 +26,20 @@ class NameTextField extends StatelessWidget {
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide(color: Colors.black)),
-          prefixIcon: buildPrefixIcon(),
+          prefixIcon:
+              buildPrefixIcon('assets/images/iconamoon_profile-light.svg'),
         ),
       ),
     );
   }
 
-  Widget buildPrefixIcon() {
+  Widget buildPrefixIcon(String assets) {
     return Row(
       mainAxisSize: MainAxisSize.min, // Prevent horizontal expansion
       children: [
         SizedBox(width: 24),
         SvgPicture.asset(
-          'assets/images/iconamoon_profile-light.svg',
+          assets,
           width: 22, height: 22,
           // Adjust width as needed
           allowDrawingOutsideViewBox: true,

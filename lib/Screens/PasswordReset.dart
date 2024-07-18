@@ -1,4 +1,5 @@
 import 'package:al_anna/MyElevatedButton.dart';
+import 'package:al_anna/Screens/OtpScreen.dart';
 import 'package:al_anna/textField/phoneFormat.dart';
 import 'package:flutter/material.dart';
 
@@ -39,14 +40,19 @@ class PasswordReset extends StatelessWidget {
             MyElevatedButton(
               onPressed: () {
                 // Action for logging in
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return OtpScreen();
+                  },
+                ));
               },
               height: 53.4,
               width: 300,
-              gradient: LinearGradient(
+              /* gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [Color(0xFFE7A967), Color(0xFF815E3A)],
-              ),
+              ),*/
               child: Text(
                 'إرسال الكود',
                 style: TextStyle(fontFamily: 'Cairo', fontSize: 14),
