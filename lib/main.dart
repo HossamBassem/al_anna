@@ -1,6 +1,9 @@
 import 'package:al_anna/CircleAvatar.dart';
+import 'package:al_anna/CustomCard.dart';
+import 'package:al_anna/Screens/AnnualQatia.dart';
 import 'package:al_anna/Screens/CreateNewAnna.dart';
 import 'package:al_anna/Screens/JoinAnna.dart';
+import 'package:al_anna/Screens/MonthlyQatia.dart';
 import 'package:al_anna/Screens/OtpScreen.dart';
 import 'package:al_anna/Screens/PasswordReset.dart';
 import 'package:al_anna/Screens/RequestSentDialog.dart';
@@ -39,7 +42,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: JoinAnna(),
+      home: MonthlyQatia(),
       builder: (context, child) {
         return Directionality(textDirection: TextDirection.rtl, child: child!);
       },
