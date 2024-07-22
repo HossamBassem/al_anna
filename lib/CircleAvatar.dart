@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'dart:io';
 
 class CircleAvatarB extends StatelessWidget {
+  final ImageProvider<Object>? image; // Make image optional
+
+  CircleAvatarB({this.image});
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return CircleAvatar(
-      radius: 54,
-      backgroundColor: Colors.white,
-      child: SvgPicture.asset('assets/images/icon-park_upload-picture.svg'),
+      radius: 60,
+      backgroundImage: image ?? AssetImage('assets/images/upload.jpg'),
+      backgroundColor: Colors.transparent,
     );
   }
 }

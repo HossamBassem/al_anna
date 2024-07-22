@@ -1,3 +1,11 @@
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:path/path.dart' as path;
+
+// Import other necessary files
 import 'package:al_anna/CircleAvatar.dart';
 import 'package:al_anna/MyElevatedButton.dart';
 import 'package:al_anna/Screens/login.dart';
@@ -5,12 +13,29 @@ import 'package:al_anna/textField/EmailTextField.dart';
 import 'package:al_anna/textField/NameTextField.dart';
 import 'package:al_anna/textField/passwordTextField.dart';
 import 'package:al_anna/textField/phoneFormat.dart';
-import 'package:flutter/material.dart';
 
-class CreateAccount extends StatelessWidget {
+class CreateAccount extends StatefulWidget {
+  @override
+  State<CreateAccount> createState() => _CreateAccountState();
+}
+
+class _CreateAccountState extends State<CreateAccount> {
+  File? _selectedImage;
+
+  // Method to pick an image from the gallery
+  Future<void> _pickImage() async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+
+    if (pickedFile != null) {
+      setState(() {
+        _selectedImage = File(pickedFile.path);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -20,7 +45,7 @@ class CreateAccount extends StatelessWidget {
               children: [
                 Container(height: 900),
                 Image.asset(
-                  'assets/images/qatar_tent.png', // Replace with your image URL or use AssetImage for local assets
+                  'assets/images/qatar_tent.png',
                   height: 300,
                   width: double.infinity,
                   fit: BoxFit.cover,
@@ -65,11 +90,6 @@ class CreateAccount extends StatelessWidget {
                               },
                               height: 53.4,
                               width: 300,
-                              /* gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [Color(0xFFE7A967), Color(0xFF815E3A)],
-                              ),*/
                               child: Text(
                                 'تسجيل الدخول',
                                 style: TextStyle(fontSize: 14),
@@ -103,7 +123,7 @@ class CreateAccount extends StatelessWidget {
                             ),
                             SizedBox(height: 28),
                             Image.asset(
-                              'assets/images/Group 13.png', // Replace with your fire icon URL or use AssetImage for local assets
+                              'assets/images/Group 13.png',
                               height: 145,
                               width: 145,
                             ),
@@ -113,7 +133,19 @@ class CreateAccount extends StatelessWidget {
                     ),
                   ),
                 ),
-                Positioned(right: 285, top: 178, child: CircleAvatarB()),
+                Positioned(
+                  right: 285,
+                  top: 178,
+                  child: GestureDetector(
+                    onTap: _pickImage, // Call the image picker method
+                    child: CircleAvatarB(
+                      image: _selectedImage != null
+                          ? FileImage(
+                              _selectedImage!) // Display the selected image
+                          : null,
+                    ),
+                  ),
+                ),
               ],
             ),
           ],

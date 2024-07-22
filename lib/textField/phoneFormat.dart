@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:flutter/services.dart';
 
 class CustomPhoneTextField extends StatefulWidget {
   final String? initialValue;
@@ -60,8 +61,14 @@ class _CustomPhoneTextFieldState extends State<CustomPhoneTextField> {
           ),
           Expanded(
             child: TextField(
+              maxLength: 8,
+              maxLengthEnforcement: MaxLengthEnforcement.enforced,
               controller: _phoneController,
               decoration: InputDecoration(
+                counterStyle: TextStyle(
+                  height: double.minPositive,
+                ),
+                counterText: '',
                 hintText: "7784 5436",
                 border: InputBorder.none,
                 contentPadding:

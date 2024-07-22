@@ -1,6 +1,6 @@
 import 'package:al_anna/CustomizedTextField.dart';
 import 'package:al_anna/MyElevatedButton.dart';
-import 'package:al_anna/Screens/RequestSentDialog.dart';
+import 'package:al_anna/Screens/CustomRequestSentDialog.dart';
 import 'package:al_anna/textField/passwordTextField.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -123,10 +123,11 @@ class JoinAnna extends StatelessWidget {
                             context: context,
                             builder: (BuildContext context) => CustomDialog(
                               image: SvgPicture.asset(
-                                  'assets/images/Ellipse 5.svg'),
+                                'assets/images/Ellipse 5.svg',
+                              ),
                               title: "تم إرسال طلبك",
                               description: "سيتم لاحقا ارسال إشعار بالموافقة",
-                              buttonText: "تم",
+                              buttonText: 'تم',
                             ),
                           );
                         },

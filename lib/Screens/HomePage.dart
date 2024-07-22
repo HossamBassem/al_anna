@@ -20,11 +20,14 @@ class HomePage extends StatelessWidget {
                   SvgPicture.asset('assets/images/system-uicons_side-menu.svg'),
               onPressed: () {},
             ),
-            title: Image.asset(
-              'assets/images/Asset 1@4x 2.png',
-              alignment: Alignment.center,
-              height: 50,
-              width: 50,
+            title: Padding(
+              padding: const EdgeInsets.only(top: 6),
+              child: Image.asset(
+                'assets/images/Asset 1@4x 2.png',
+                alignment: Alignment.center,
+                height: 50,
+                width: 50,
+              ),
             ),
             backgroundColor: const Color(0xffE7A967),
             centerTitle: true,
@@ -162,7 +165,7 @@ class TotalCachCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(width: 1, color: Colors.black),
+          border: Border.all(width: 1, color: Color(0xff605757)),
         ),
         child: Card(
           elevation: 0,

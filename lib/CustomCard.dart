@@ -28,7 +28,7 @@ class CustomCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(width: 1, color: Colors.black),
+          border: Border.all(width: 1, color: Color(0xff605757)),
         ),
         child: Card(
           elevation: 0,

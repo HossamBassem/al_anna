@@ -16,7 +16,7 @@ class CustomContainer extends StatelessWidget {
         width: double.infinity,
         decoration: ShapeDecoration(
           shape: UnderlineInputBorder(
-              borderSide: BorderSide(color: Color(0xffAFADAD))),
+              borderSide: BorderSide(color: Color(0xffDADADA), width: 1)),
         ),
         child: Padding(
           padding: const EdgeInsets.only(bottom: 16),

@@ -23,6 +23,10 @@ class EmailTextField extends StatelessWidget {
                 color: Colors.black,
               )),
           hintText: "البريد الإلكتروني",
+          hintStyle: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w800,
+              color: Color(0xffAFADAD)),
           contentPadding: EdgeInsets.symmetric(vertical: 8),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
