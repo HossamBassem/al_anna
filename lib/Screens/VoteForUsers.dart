@@ -1,4 +1,5 @@
 import 'package:al_anna/CustomContainer.dart';
+import 'package:al_anna/Screens/UserCurrentVotes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -35,9 +36,18 @@ class VoteForUsers extends StatelessWidget {
           SizedBox(
             height: 26,
           ),
-          CustomContainer(
-            containerText: 'التصويتات الحالية',
-            icon: SvgPicture.asset('assets/images/mdi_vote-outline.svg'),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return UserCurrentVotes();
+                },
+              ));
+            },
+            child: CustomContainer(
+              containerText: 'التصويتات الحالية',
+              icon: SvgPicture.asset('assets/images/mdi_vote-outline.svg'),
+            ),
           ),
           SizedBox(
             height: 16,

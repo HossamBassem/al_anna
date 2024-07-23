@@ -48,6 +48,7 @@ dependencies:
   flutter_svg: ^2.0.5
   percent_indicator: ^4.2.3
   flutter_image_slideshow: ^0.1.6
+  better_polls: ^1.0.8
 
 dev_dependencies:
   flutter_test:

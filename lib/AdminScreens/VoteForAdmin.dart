@@ -1,3 +1,4 @@
+import 'package:al_anna/AdminScreens/AdminCurrentVotes.dart';
 import 'package:al_anna/CustomContainer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -42,9 +43,18 @@ class VoteForAdmin extends StatelessWidget {
           SizedBox(
             height: 16,
           ),
-          CustomContainer(
-            containerText: 'التصويتات الحالية',
-            icon: SvgPicture.asset('assets/images/mdi_vote-outline.svg'),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return AdminCurrentVotes();
+                },
+              ));
+            },
+            child: CustomContainer(
+              containerText: 'التصويتات الحالية',
+              icon: SvgPicture.asset('assets/images/mdi_vote-outline.svg'),
+            ),
           ),
           SizedBox(
             height: 16,

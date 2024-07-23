@@ -4,7 +4,7 @@ import 'package:al_anna/MemberCard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class AnnualQatia extends StatelessWidget {
+class AccMonthlyQatia extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +20,7 @@ class AnnualQatia extends StatelessWidget {
               onPressed: () {},
             ),
             title: const Text(
-              'القطية السنوية',
+              'القطية الشهرية',
               textDirection: TextDirection.rtl,
               style: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
             ),
@@ -35,7 +35,7 @@ class AnnualQatia extends StatelessWidget {
           Row(
             children: [
               Text(
-                'القطية السنوية',
+                'القطية الشهرية',
                 style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
               ),
               SizedBox(
@@ -55,27 +55,27 @@ class AnnualQatia extends StatelessWidget {
             height: 13,
           ),
           CustomCard(
-              circlerPercentColor: Color(0xffFFA84A),
-              totalPaid: '180,000',
-              paid: '126,000',
+              circlerPercentColor: Color(0xff04BFDA),
+              totalPaid: '15,000',
+              paid: '10,000',
               percent: '70%',
-              ovalPaid: SvgPicture.asset('assets/images/Oval.svg'),
-              remaining: '54,000',
+              ovalPaid: SvgPicture.asset('assets/images/Oval (2).svg'),
+              remaining: '5,000',
               remainingPercent: '30%'),
           SizedBox(
-            height: 15,
+            height: 27,
           ),
           Row(
             children: [
               Text(
-                'القطية السنوية',
+                'القطية الشهرية',
                 style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
               ),
               SizedBox(
                 width: 8,
               ),
               Text(
-                '12,000 ر.ق',
+                '1000',
                 style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
               ),
               SizedBox(
@@ -96,11 +96,11 @@ class AnnualQatia extends StatelessWidget {
           ),
           ...List.generate(
               10,
-              (index) => MemberCard(
-                    linearPercentColor: Color(0xffFFA84A),
-                    paid: '7000',
-                    remaining: '5000',
-                    ovalPaid: SvgPicture.asset('assets/images/Oval.svg'),
+              (index) => UpdatedMemberCard(
+                    linearPercentColor: Color(0xff04BFDA),
+                    paid: '700',
+                    remaining: '300',
+                    ovalPaid: SvgPicture.asset('assets/images/Oval (2).svg'),
                   )),
         ],
       ),

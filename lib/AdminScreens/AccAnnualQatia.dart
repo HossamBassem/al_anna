@@ -4,7 +4,7 @@ import 'package:al_anna/MemberCard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class AnnualQatia extends StatelessWidget {
+class AccAnnualQatia extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,7 +96,7 @@ class AnnualQatia extends StatelessWidget {
           ),
           ...List.generate(
               10,
-              (index) => MemberCard(
+              (index) => UpdatedMemberCard(
                     linearPercentColor: Color(0xffFFA84A),
                     paid: '7000',
                     remaining: '5000',

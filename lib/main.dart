@@ -1,4 +1,6 @@
+import 'package:al_anna/AdminScreens/AccAnnualQatia.dart';
 import 'package:al_anna/AdminScreens/AddNewVote.dart';
+import 'package:al_anna/AdminScreens/AdminCurrentVotes.dart';
 import 'package:al_anna/CircleAvatar.dart';
 import 'package:al_anna/CustomCard.dart';
 import 'package:al_anna/Screens/AnnualQatia.dart';
@@ -47,7 +49,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: OtpScreen(),
+      home: VoteForUsers(),
       builder: (context, child) {
         return Directionality(textDirection: TextDirection.rtl, child: child!);
       },

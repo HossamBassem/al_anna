@@ -52,11 +52,11 @@ class _CreateAccountState extends State<CreateAccount> {
                 ),
                 Positioned(
                   top: 240,
-                  width: 410,
+                  width: double.maxFinite,
                   height: 605,
                   child: Container(
                     height: 441,
-                    width: 380,
+                    width: double.infinity,
                     alignment: Alignment.center,
                     decoration: const ShapeDecoration(
                       color: Color(0xFFFAFAFA),
