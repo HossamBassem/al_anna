@@ -3,13 +3,17 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomDialog extends StatelessWidget {
   final String title, description, buttonText;
-  final SvgPicture image;
 
+  final Color buttonColor;
+  final SvgPicture avatarImage;
+  final Color avatarBackgroundColor;
   CustomDialog({
     required this.title,
     required this.description,
     required this.buttonText,
-    required this.image,
+    required this.buttonColor,
+    required this.avatarImage,
+    required this.avatarBackgroundColor,
   });
 
   @override
@@ -69,7 +73,7 @@ class CustomDialog extends StatelessWidget {
                     height: 38,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          elevation: 0, backgroundColor: Color(0xff3AD29F)),
+                          elevation: 0, backgroundColor: buttonColor),
                       onPressed: () {
                         Navigator.of(context).pop(); // To close the dialog
                       },
@@ -89,8 +93,8 @@ class CustomDialog extends StatelessWidget {
               height: 100,
               width: 100,
               child: CircleAvatar(
-                child: SvgPicture.asset('assets/images/Group.svg'),
-                backgroundColor: Color(0xff3AD29F),
+                child: avatarImage,
+                backgroundColor: avatarBackgroundColor,
                 radius: Consts.avatarRadius,
               ),
             ),

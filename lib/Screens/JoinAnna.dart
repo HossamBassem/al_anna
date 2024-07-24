@@ -122,9 +122,10 @@ class JoinAnna extends StatelessWidget {
                           showDialog(
                             context: context,
                             builder: (BuildContext context) => CustomDialog(
-                              image: SvgPicture.asset(
-                                'assets/images/Ellipse 5.svg',
-                              ),
+                              avatarBackgroundColor: Color(0xff3AD29F),
+                              avatarImage:
+                                  SvgPicture.asset('assets/images/Group.svg'),
+                              buttonColor: Color(0xff3AD29F),
                               title: "تم إرسال طلبك",
                               description: "سيتم لاحقا ارسال إشعار بالموافقة",
                               buttonText: 'تم',

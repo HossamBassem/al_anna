@@ -20,7 +20,7 @@ class _AdminVotingContainerState extends State<AdminVotingContainer> {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(width: 1, color: Colors.black),
+          border: Border.all(width: 1, color: Color(0xff605757)),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
