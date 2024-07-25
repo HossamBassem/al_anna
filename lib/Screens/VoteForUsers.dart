@@ -1,4 +1,5 @@
 import 'package:al_anna/CustomContainer.dart';
+import 'package:al_anna/Screens/PreviousVotes.dart';
 import 'package:al_anna/Screens/UserCurrentVotes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -19,7 +20,9 @@ class VoteForUsers extends StatelessWidget {
             leading: IconButton(
               icon: SvgPicture.asset(
                   'assets/images/fluent-mdl2_navigate-back-mirrored.svg'),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
             title: const Text(
               'تصويت',
@@ -52,9 +55,18 @@ class VoteForUsers extends StatelessWidget {
           SizedBox(
             height: 16,
           ),
-          CustomContainer(
-            containerText: 'التصويتات السابقة',
-            icon: SvgPicture.asset('assets/images/mdi_vote-outline.svg'),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return PreviousVotes();
+                },
+              ));
+            },
+            child: CustomContainer(
+              containerText: 'التصويتات السابقة',
+              icon: SvgPicture.asset('assets/images/mdi_vote-outline.svg'),
+            ),
           ),
           SizedBox(
             height: 155,

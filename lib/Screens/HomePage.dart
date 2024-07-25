@@ -1,5 +1,6 @@
 import 'package:al_anna/CustomContainer.dart';
 import 'package:al_anna/Screens/AnnaMembers.dart';
+import 'package:al_anna/Screens/AnnaRules.dart';
 import 'package:al_anna/Screens/AnnualQatia.dart';
 import 'package:al_anna/Screens/Bills.dart';
 import 'package:al_anna/Screens/MonthlyQatia.dart';
@@ -178,10 +179,19 @@ class HomePage extends StatelessWidget {
             SizedBox(
               height: 16,
             ),
-            CustomContainer(
-                containerText: 'لوائح العنة',
-                icon: SvgPicture.asset(
-                    'assets/images/solar_bill-list-linear.svg')),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return AnnaRules();
+                  },
+                ));
+              },
+              child: CustomContainer(
+                  containerText: 'لوائح العنة',
+                  icon: SvgPicture.asset(
+                      'assets/images/solar_bill-list-linear.svg')),
+            ),
           ],
         ),
       ),
