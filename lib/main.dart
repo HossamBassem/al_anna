@@ -1,3 +1,4 @@
+import 'package:al_anna/Accountant/AccountantBillDetails.dart';
 import 'package:al_anna/AdminScreens/AccAnnualQatia.dart';
 import 'package:al_anna/AdminScreens/AddNewVote.dart';
 import 'package:al_anna/AdminScreens/AdminCurrentVotes.dart';
@@ -8,6 +9,7 @@ import 'package:al_anna/Screens/AnnaMembers.dart';
 import 'package:al_anna/Screens/AnnualQatia.dart';
 import 'package:al_anna/Screens/CreateAccount.dart';
 import 'package:al_anna/Screens/CreateNewAnna.dart';
+import 'package:al_anna/Screens/CurrentBillsScreen.dart';
 import 'package:al_anna/Screens/HomePage.dart';
 import 'package:al_anna/Screens/JoinAnna.dart';
 import 'package:al_anna/Screens/MonthlyQatia.dart';
@@ -53,7 +55,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: AnnaMembersForAdmin(),
+      home: HomePage(),
       builder: (context, child) {
         return Directionality(textDirection: TextDirection.rtl, child: child!);
       },

@@ -83,6 +83,9 @@ class CustomDialog extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 5,
+                ),
               ],
             ),
           ),

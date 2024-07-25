@@ -1,4 +1,9 @@
 import 'package:al_anna/CustomContainer.dart';
+import 'package:al_anna/Screens/AnnaMembers.dart';
+import 'package:al_anna/Screens/AnnualQatia.dart';
+import 'package:al_anna/Screens/Bills.dart';
+import 'package:al_anna/Screens/MonthlyQatia.dart';
+import 'package:al_anna/Screens/VoteForUsers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -95,36 +100,81 @@ class HomePage extends StatelessWidget {
             SizedBox(
               height: 33,
             ),
-            CustomContainer(
-                containerText: 'القطية السنوية',
-                icon: SvgPicture.asset(
-                    'assets/images/solar_bill-list-linear.svg')),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return AnnualQatia();
+                  },
+                ));
+              },
+              child: CustomContainer(
+                  containerText: 'القطية السنوية',
+                  icon: SvgPicture.asset(
+                      'assets/images/solar_bill-list-linear.svg')),
+            ),
             SizedBox(
               height: 16,
             ),
-            CustomContainer(
-                containerText: 'القطية الشهرية',
-                icon: SvgPicture.asset(
-                    'assets/images/solar_bill-list-linear.svg')),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return MonthlyQatia();
+                  },
+                ));
+              },
+              child: CustomContainer(
+                  containerText: 'القطية الشهرية',
+                  icon: SvgPicture.asset(
+                      'assets/images/solar_bill-list-linear.svg')),
+            ),
             SizedBox(
               height: 16,
             ),
-            CustomContainer(
-                containerText: 'فواتير',
-                icon: SvgPicture.asset(
-                    'assets/images/solar_bill-list-linear.svg')),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return Bills();
+                  },
+                ));
+              },
+              child: CustomContainer(
+                  containerText: 'فواتير',
+                  icon: SvgPicture.asset(
+                      'assets/images/solar_bill-list-linear.svg')),
+            ),
             SizedBox(
               height: 16,
             ),
-            CustomContainer(
-                containerText: 'تصويت',
-                icon: SvgPicture.asset('assets/images/mdi_vote-outline.svg')),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return VoteForUsers();
+                  },
+                ));
+              },
+              child: CustomContainer(
+                  containerText: 'تصويت',
+                  icon: SvgPicture.asset('assets/images/mdi_vote-outline.svg')),
+            ),
             SizedBox(
               height: 16,
             ),
-            CustomContainer(
-                containerText: 'أعضاء العنة',
-                icon: SvgPicture.asset('assets/images/arcticons_id-me.svg')),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return AnnaMembers();
+                  },
+                ));
+              },
+              child: CustomContainer(
+                  containerText: 'أعضاء العنة',
+                  icon: SvgPicture.asset('assets/images/arcticons_id-me.svg')),
+            ),
             SizedBox(
               height: 16,
             ),

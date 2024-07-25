@@ -16,7 +16,9 @@ class MonthlyQatia extends StatelessWidget {
             leading: IconButton(
               icon: SvgPicture.asset(
                   'assets/images/fluent-mdl2_navigate-back-mirrored.svg'),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
             title: const Text(
               'القطية الشهرية',

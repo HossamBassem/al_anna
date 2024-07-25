@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: AnnaMembers(),
-  ));
-}
-
 class AnnaMembers extends StatelessWidget {
   final List<Map<String, String>> members = [
     {
@@ -43,7 +37,9 @@ class AnnaMembers extends StatelessWidget {
             leading: IconButton(
               icon: SvgPicture.asset(
                   'assets/images/fluent-mdl2_navigate-back-mirrored.svg'),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
             title: const Text(
               'الأعضاء ',

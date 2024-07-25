@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:al_anna/CustomizedDropDownForm.dart';
 import 'package:al_anna/CustomizedTextField.dart';
 import 'package:al_anna/MyElevatedButton.dart';
@@ -5,6 +7,7 @@ import 'package:al_anna/Screens/HomeScreen.dart';
 import 'package:al_anna/textField/passwordTextField.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:image_picker/image_picker.dart';
 
 class CreateNewAnna extends StatefulWidget {
   @override
@@ -15,6 +18,19 @@ class _CreateNewAnnaState extends State<CreateNewAnna> {
   final _formKey = GlobalKey<FormState>();
 
   String? _selectedLocation;
+  File? _selectedImage;
+
+  // Method to pick an image from the gallery
+  Future<void> _pickImage() async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+
+    if (pickedFile != null) {
+      setState(() {
+        _selectedImage = File(pickedFile.path);
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +118,7 @@ class _CreateNewAnnaState extends State<CreateNewAnna> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    const Text('صورة العنة',
+                    const Text('صورة الفاتورة ',
                         style: TextStyle(
                             color: Color(0xff605757),
                             fontSize: 14,
@@ -110,15 +126,31 @@ class _CreateNewAnnaState extends State<CreateNewAnna> {
                     const SizedBox(
                       width: 35,
                     ),
-                    Container(
-                      height: 113,
-                      width: 240,
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
-                          borderRadius: BorderRadius.circular(20)),
-                      alignment: Alignment.center,
-                      child: SvgPicture.asset(
-                          'assets/images/icon-park_upload-picture.svg'),
+                    GestureDetector(
+                      onTap: _pickImage,
+                      child: Container(
+                        height: 113,
+                        width: 240,
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black),
+                            borderRadius: BorderRadius.circular(20)),
+                        alignment: Alignment.center,
+                        child: _selectedImage == null
+                            ? SvgPicture.asset(
+                                'assets/images/icon-park_upload-picture.svg',
+                                height: 50,
+                                width: 50,
+                              )
+                            : ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image.file(
+                                  _selectedImage!,
+                                  fit: BoxFit.fill,
+                                  height: 113,
+                                  width: 240,
+                                ),
+                              ),
+                      ),
                     ),
                   ],
                 ),
@@ -267,14 +299,6 @@ class _CreateNewAnnaState extends State<CreateNewAnna> {
                       style: TextStyle(fontSize: 14),
                     ),
                     borderRadius: BorderRadius.circular(30),
-                    /* gradient: LinearGradient(
-                      colors: [
-                        Color(0xFFE7A967),
-                        Color(0xFF815E3A),
-                      ],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    ),*/
                   ),
                 ),
               ],
