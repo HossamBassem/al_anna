@@ -3,8 +3,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class PasswordTextField extends StatefulWidget {
   final String hintText;
+  bool enabled = false;
 
-  const PasswordTextField({Key? key, required this.hintText}) : super(key: key);
+  PasswordTextField({Key? key, required this.hintText, required this.enabled})
+      : super(key: key);
 
   @override
   State<PasswordTextField> createState() => _PasswordTextFieldState();
@@ -18,6 +20,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
     return SizedBox(
       height: 41,
       child: TextField(
+        readOnly: widget.enabled,
         scrollPadding: EdgeInsets.only(
             bottom: MediaQuery.of(context).viewInsets.bottom, top: 10),
         obscureText: _obscureText,
@@ -25,13 +28,13 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide(
-              color: Colors.black,
+              color: Colors.grey,
             ),
           ),
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide(
-                color: Colors.black,
+                color: Colors.grey,
               )),
           hintText: widget.hintText,
           hintStyle: TextStyle(
@@ -41,7 +44,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
           contentPadding: EdgeInsets.symmetric(vertical: 8),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(color: Colors.black)),
+              borderSide: BorderSide(color: Colors.grey)),
           prefixIcon: buildPrefixIcon(),
           suffixIcon: IconButton(
             icon: Icon(_obscureText ? Icons.visibility_off : Icons.visibility),

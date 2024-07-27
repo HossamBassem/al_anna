@@ -46,7 +46,7 @@ class LoginScreen extends StatelessWidget {
                       SizedBox(height: 45.5),
                       CustomPhoneTextField(),
                       SizedBox(height: 16),
-                      PasswordTextField(hintText: "كلمة المرور"),
+                      PasswordTextField(hintText: "كلمة المرور", enabled: true),
                       SizedBox(height: 16),
                       Align(
                         alignment: Alignment.centerRight,

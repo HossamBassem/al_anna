@@ -80,9 +80,11 @@ class _CreateAccountState extends State<CreateAccount> {
                             SizedBox(height: 16),
                             EmailTextField(),
                             SizedBox(height: 16),
-                            PasswordTextField(hintText: "كلمة المرور"),
+                            PasswordTextField(
+                                hintText: "كلمة المرور", enabled: true),
                             SizedBox(height: 16),
-                            PasswordTextField(hintText: "إعادة كلمة المرور"),
+                            PasswordTextField(
+                                hintText: "إعادة كلمة المرور", enabled: true),
                             SizedBox(height: 20),
                             MyElevatedButton(
                               onPressed: () {

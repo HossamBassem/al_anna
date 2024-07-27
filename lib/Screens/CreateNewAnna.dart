@@ -111,9 +111,11 @@ class _CreateNewAnnaState extends State<CreateNewAnna> {
                   hintText: 'ادخل اسم العنة',
                 ),
                 const SizedBox(height: 16.0),
-                const PasswordTextField(hintText: 'كلمة المرور للإنضمام للعنة'),
+                PasswordTextField(
+                    hintText: 'كلمة المرور للإنضمام للعنة', enabled: true),
                 const SizedBox(height: 16.0),
-                const PasswordTextField(hintText: 'إعادة إدخال كلمة المرور'),
+                PasswordTextField(
+                    hintText: 'إعادة إدخال كلمة المرور', enabled: true),
                 const SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,

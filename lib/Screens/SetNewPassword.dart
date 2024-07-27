@@ -35,11 +35,15 @@ class SetNewPassword extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(16),
                 child: Column(children: [
-                  PasswordTextField(hintText: 'كلمة المرور الحالية'),
+                  PasswordTextField(
+                      hintText: 'كلمة المرور الحالية', enabled: true),
                   SizedBox(height: 27.5),
-                  PasswordTextField(hintText: 'كلمة المرور الجديدة'),
+                  PasswordTextField(
+                      hintText: 'كلمة المرور الجديدة', enabled: true),
                   SizedBox(height: 27.5),
-                  PasswordTextField(hintText: 'إعادة إدخال كلمة المرور الجديدة')
+                  PasswordTextField(
+                      hintText: 'إعادة إدخال كلمة المرور الجديدة',
+                      enabled: true)
                 ]),
               ),
               SizedBox(

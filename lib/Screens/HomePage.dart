@@ -1,9 +1,13 @@
+import 'package:al_anna/CircleAvatar.dart';
 import 'package:al_anna/CustomContainer.dart';
 import 'package:al_anna/Screens/AnnaMembers.dart';
 import 'package:al_anna/Screens/AnnaRules.dart';
 import 'package:al_anna/Screens/AnnualQatia.dart';
 import 'package:al_anna/Screens/Bills.dart';
+import 'package:al_anna/Screens/CreateYourApp.dart';
+import 'package:al_anna/Screens/InviteFriend.dart';
 import 'package:al_anna/Screens/MonthlyQatia.dart';
+import 'package:al_anna/Screens/ProfilePage.dart';
 import 'package:al_anna/Screens/VoteForUsers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
@@ -13,7 +17,6 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(62),
@@ -21,10 +24,16 @@ class HomePage extends StatelessWidget {
           textDirection: TextDirection.rtl,
           child: AppBar(
             automaticallyImplyLeading: true,
-            leading: IconButton(
-              icon:
-                  SvgPicture.asset('assets/images/system-uicons_side-menu.svg'),
-              onPressed: () {},
+            leading: Builder(
+              builder: (BuildContext context) {
+                return IconButton(
+                  icon: SvgPicture.asset(
+                      'assets/images/system-uicons_side-menu.svg'),
+                  onPressed: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                );
+              },
             ),
             title: Padding(
               padding: const EdgeInsets.only(top: 6),
@@ -37,6 +46,153 @@ class HomePage extends StatelessWidget {
             ),
             backgroundColor: const Color(0xffE7A967),
             centerTitle: true,
+          ),
+        ),
+      ),
+      drawer: Drawer(
+        width: 250,
+        backgroundColor: Color(0xffE7A967),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 130,
+              ),
+              SizedBox(
+                height: 85,
+                width: 85,
+                child: CircleAvatar(
+                  backgroundColor: Colors.transparent,
+                  foregroundColor: Colors.transparent,
+                  child: Image.asset('assets/images/Ellipse 5.png',
+                      height: 85, width: 85, fit: BoxFit.cover),
+                ),
+              ),
+              SizedBox(height: 10),
+              Text(
+                'أهلا،',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500),
+              ),
+              SizedBox(height: 4),
+              Text(
+                'عبد الله المري',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w800),
+              ),
+              SizedBox(height: 30),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return ProfilePage();
+                    },
+                  ));
+                },
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                        'assets/images/iconamoon_profile-light (1).svg'),
+                    SizedBox(width: 4),
+                    Text(
+                      'الصفحة الشخصية',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w800),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return InviteFriend();
+                    },
+                  ));
+                },
+                child: Row(
+                  children: [
+                    SvgPicture.asset('assets/images/mdi_invite.svg'),
+                    SizedBox(width: 4),
+                    Text(
+                      'دعوة صديق',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w800),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return CreateAppPage();
+                    },
+                  ));
+                },
+                child: Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      gradient: LinearGradient(
+                          colors: [
+                            Color(0xff3AD29F),
+                            Color(0xff1E6C52),
+                          ],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter)),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(
+                          'assets/images/uit_create-dashboard.svg'),
+                      SizedBox(width: 4),
+                      Text(
+                        'إنشاء تطبيقك الخاص',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              Divider(
+                thickness: 2,
+                color: Color(0xffFAFAFA),
+              ),
+              SizedBox(height: 44),
+              Row(
+                children: [
+                  SvgPicture.asset('assets/images/Sign Out.svg'),
+                  SizedBox(width: 4),
+                  Text(
+                    'تسجيل الخروج',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w800),
+                  ),
+                ],
+              ),
+              SizedBox(height: 40),
+              Image.asset('assets/images/Asset 1@4x 2.png')
+            ],
           ),
         ),
       ),
@@ -69,9 +225,7 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
-              height: 10,
-            ),
+            SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 19),
               child: Align(
@@ -86,9 +240,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              height: 10,
-            ),
+            SizedBox(height: 10),
             TotalCachCard(
               circlerPercentColor: Color(0xff3AD29F),
               paid: '100,000',
@@ -98,9 +250,7 @@ class HomePage extends StatelessWidget {
               totalPaid: '126,000',
               remainingPercent: '30%',
             ),
-            SizedBox(
-              height: 33,
-            ),
+            SizedBox(height: 33),
             GestureDetector(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(
@@ -114,9 +264,7 @@ class HomePage extends StatelessWidget {
                   icon: SvgPicture.asset(
                       'assets/images/solar_bill-list-linear.svg')),
             ),
-            SizedBox(
-              height: 16,
-            ),
+            SizedBox(height: 16),
             GestureDetector(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(
@@ -130,9 +278,7 @@ class HomePage extends StatelessWidget {
                   icon: SvgPicture.asset(
                       'assets/images/solar_bill-list-linear.svg')),
             ),
-            SizedBox(
-              height: 16,
-            ),
+            SizedBox(height: 16),
             GestureDetector(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(
@@ -146,9 +292,7 @@ class HomePage extends StatelessWidget {
                   icon: SvgPicture.asset(
                       'assets/images/solar_bill-list-linear.svg')),
             ),
-            SizedBox(
-              height: 16,
-            ),
+            SizedBox(height: 16),
             GestureDetector(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(
@@ -161,9 +305,7 @@ class HomePage extends StatelessWidget {
                   containerText: 'تصويت',
                   icon: SvgPicture.asset('assets/images/mdi_vote-outline.svg')),
             ),
-            SizedBox(
-              height: 16,
-            ),
+            SizedBox(height: 16),
             GestureDetector(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(
@@ -176,9 +318,7 @@ class HomePage extends StatelessWidget {
                   containerText: 'أعضاء العنة',
                   icon: SvgPicture.asset('assets/images/arcticons_id-me.svg')),
             ),
-            SizedBox(
-              height: 16,
-            ),
+            SizedBox(height: 16),
             GestureDetector(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(
@@ -246,9 +386,7 @@ class TotalCachCard extends StatelessWidget {
                           fontSize: 18,
                         ),
                       ),
-                      SizedBox(
-                        height: 16,
-                      ),
+                      SizedBox(height: 16),
                       Row(
                         children: [
                           ovalPaid,

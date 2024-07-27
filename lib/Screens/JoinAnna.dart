@@ -98,8 +98,8 @@ class JoinAnna extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       PasswordTextField(
-                        hintText: "كلمة المرور للإنضمام للعنة",
-                      ),
+                          hintText: "كلمة المرور للإنضمام للعنة",
+                          enabled: true),
                       SizedBox(height: 16),
                       const Align(
                         alignment: Alignment.centerRight,
